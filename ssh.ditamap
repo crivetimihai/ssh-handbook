@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>The Secure Shell Handbook</title>
+ <topicref href="about.md" format="markdown"/>
+ <topicref href="dita/Introduction/Introducing-SSH-the-Secure-Shell.dita">
+  <topicref href="dita/Introduction/SSH-At-A-Glance.dita"/>
+ </topicref>
+ <topicref href="dita/PuTTY/Using-PuTTY-on-Windows.dita">
+  <topicref href="dita/PuTTY/tasks/Download-and-unzip-the-PuTTY-binaries.dita"/>
+  <topicref href="dita/PuTTY/tasks/Connect-to-your-instance-using-PuTTY.dita"/>
+  <topicref href="dita/PuTTY/tasks/Generate-SSH-Keys-with-PuTTYgen.dita"/>
+  <topicref href="dita/PuTTY/tasks/Convert-SSH-Keys-to-and-from-OpenSSH-formats-with-PuTTYgen.dita"/>
+  <topicref href="dita/PuTTY/tasks/Upload-your-public-key-to-an-existing-server.dita"/>
+  <topicref href="dita/PuTTY/tasks/Connect-to-your-instance-via-SSH-using-PuTTY-and-SSH-Keys.dita"/>
+  <topicref href="dita/PuTTY/tasks/Set-up-SSH-key-management-with-PuTTY-Agent.dita"/>
+  <topicref href="dita/PuTTY/tasks/Set-up-TCP-tunnels-over-SSH-using-PuTTY.dita"/>
+  <topicref href="dita/PuTTY/tasks/Create-a-SOCKS-proxy-with-PuTTY.dita"/>
+  <topicref href="dita/PuTTY/tasks/Transfer-files-to-and-from-your-instance-with-pscp.dita"/>
+  <topicref href="dita/PuTTY/tasks/X11-Forwarding-with-PuTTY-and-XMing.dita"/>
+  <topicref href="dita/PuTTY/tasks/Verify-MD5-and-SHA1-checksum-on-Windows.dita"/>
+  <topicref href="dita/PuTTY/tasks/Install-GPG-on-Windows.dita"/>
+  <topicref href="dita/PuTTY/tasks/Verify-PuTTY-Binaries-With-GPG-Against-the-RSA-Keys.dita"/>
+  <topicref href="dita/PuTTY/tasks/Install-XMing-on-Windows.dita"/>
+ </topicref>
+
+ <!--
+ <topicref href="dita/OpenSSH/Using-OpenSSH-on-Linux-and-Mac.dita">
+  <topicref href="dita/OpenSSH/tasks/Install-the-OpenSSH-client.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Connect-to-your-instance-using-ssh.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Generate-SSH-keys-with-ssh-keygen.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Convert-SSH-Keys-to-and-from-PuTTY-with-ssh-keygen.dita"/>
+  <topicref
+   href="dita/OpenSSH/tasks/Upload-your-public-key-to-an-existing-server-with-ssh-copy-id.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Connect-to-your-instance-via-SSH-using-ssh-and-SSH-Keys.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Set-up-SSH-key-management-with-ssh-agent.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Set-up-TCP-tunnels-over-SSH.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Create-a-SOCKS-proxy-with-SSH.dita"/>
+  <topicref
+   href="dita/OpenSSH/tasks/Transfer-files-to-and-from-your-instance-with-scp-and-sftp.dita"/>
+  <topicref href="dita/OpenSSH/tasks/X11-Forwarding-with-OpenSSH.dita"/>
+ </topicref>
+ <topicref href="dita/SSHD/Configure-SSHD-on-your-instance.dita">
+  <topicref href="dita/SSHD/tasks/Create-a-regular-user-account.dita"/>
+  <topicref href="dita/SSHD/tasks/Configure-sudo-for-your-user.dita"/>
+  <topicref href="dita/SSHD/tasks/Disable-root-login-via-ssh.dita"/>
+  <topicref href="dita/SSHD/tasks/Disable-password-login-via-ssh.dita"/>
+  <topicref href="dita/SSHD/tasks/Enable-sftp-access.dita"/>
+  <topicref href="dita/SSHD/tasks/Change-the-SSHD-port.dita"/>
+  <topicref href="dita/SSHD/tasks/Configure-the-Linux-firewall.dita"/>
+  <topicref href="dita/SSHD/tasks/Permit-SSH-Access-only-to-specific-users.dita"/>
+  <topicref href="dita/SSHD/tasks/Disable-SSHD-from-listening-on-public-interfaces.dita"/>
+  <topicref href="dita/SSHD/tasks/Disable-SSHversion-1-protocol.dita"/>
+ </topicref>
+ <topicref href="dita/GUI/GUI-Access-with-VNC-and-RDP.dita">
+  <topicref href="dita/GUI/tasks/Install-VNC-on-CentOS.dita"/>
+  <topicref href="dita/GUI/tasks/Access-VNC-over-SSH-tunneling.dita"/>
+  <topicref href="dita/GUI/tasks/Access-Windows-RDP-over-SSH-tunneling.dita"/>
+  <topicref href="dita/GUI/tasks/Connecting-to-VNC-from-Windows.dita"/>
+  <topicref href="dita/GUI/tasks/Connecting-to-VNC-from-Linux.dita"/>
+  <topicref href="dita/GUI/tasks/Connecting-to-VNC-from-Mac.dita"/>
+ </topicref>
+
+ -->
+ <topicref href="dita/Tips-and-Tricks/SSH-Tips-and-Tricks.dita">
+  <!--topicref href="dita/Tips-and-Tricks/tasks/Run-remote-commands-over-ssh.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Pipe-data-over-SSH.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Preserving-sessions-with-dtach-tmux-and-screen.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Replicate-data-over-SSH-with-rsync.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Parallel-Secure-Copy-with-Filezilla.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Copy-files-with-WinSCP.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Mount-a-remote-filesystem-over-SSH.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Port-knocking-with-knockd.dita"/>
+  <topicref href="dita/OpenSSH/tasks/Enable-compression.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Using-netcat-mode.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Using-Visual-Host-Keys.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Create-a-custom-SSH-banner.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Client-configuration-tricks.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Install-OpenSSH-Client-via-cygwin-on-Windows.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Install-SSHD-on-Windows-via-Cygwin.dita"/>
+  <topicref href="dita/Tips-and-Tricks/tasks/Working-with-key-fingerprints.dita"/-->
+  <topicref href="dita/Tips-and-Tricks/tasks/Encrypt-Decrypt-and-change-your-Private-Key-password.dita"/>
+ </topicref>
+ <!--
+ <topicref href="dita/Troubleshooting/Troubleshooting-SSH-Issues.dita">
+  <topicref href="dita/Troubleshooting/tasks/Run-SSH-in-verbose-mode.dita"/>
+  <topicref href="dita/Troubleshooting/tasks/Run-SSHD-in-debug-mode.dita"/>
+  <topicref href="dita/Troubleshooting/tasks/View-SSHD-Logs.dita"/>
+ </topicref>
+ <topicref href="dita/Next-Steps/Next-Steps.dita">
+  <topicref href="dita/Next-Steps/learning-assessment.dita"/>
+  <topicref href="dita/Next-Steps/troubleshooting.dita"/>
+  <topicref href="dita/Next-Steps/ssh-keygen-reference.dita"/>
+ </topicref-->
+</map>

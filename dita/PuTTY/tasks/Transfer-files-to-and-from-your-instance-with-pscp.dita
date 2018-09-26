@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_kt2_n12_5s">
+    <title>Transfer files to and from your instance with pscp</title>
+    <shortdesc>You can copy files to and from your server using <keyword>PuTTY</keyword>
+        <cmdname>pscp.exe</cmdname>.</shortdesc>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>pscp</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq/>
+        <context/>
+        <section>
+            <title>Receive files from a remote server:</title>
+            <p>To receive files from a remote server: <codeph>pscp [options] [user@]host:source
+                    target</codeph>. </p>
+            <p>For example, to copy <filepath>/etc/hosts</filepath> from your server to
+                    <filepath>c:\temp\hosts.txt</filepath>:<codeblock>pscp fred@example.com:/etc/hosts c:\temp\hosts.txt</codeblock></p>
+        </section>
+        <section>
+            <title>Send files to a remote server:</title>
+            <p>To send files to a remote server: <codeph>pscp [options] source [source...]
+                    [user@]host:target</codeph>. </p>
+            <p>For example, to copy <filepath>c:\temp\hosts.txt</filepath> to your server
+                    <filepath>/tmp/hosts</filepath>:<codeblock>pscp c:\temp\hosts.txt fred@example.com:/tmp/hosts</codeblock></p>
+        </section>
+        <result>You can now upload and download files.</result>
+        <postreq/>
+    </taskbody>
+    <related-links/>
+</task>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_icg_lg1_ws">
+    <title>Verify MD5 and SHA-1 checksum on Windows</title>
+    <shortdesc>Using the Microsoft File Checksum Integrity Verifier to verify checksums on the
+        Windows platform.</shortdesc>
+    <taskbody>
+        <context/>
+        <steps id="steps_ftq_ng1_ws">
+            <step>
+                <cmd>Navigate to <xref
+                        href="http://www.microsoft.com/en-us/download/details.aspx?id=11533"
+                        format="html" scope="external"
+                        >http://www.microsoft.com/en-us/download/details.aspx?id=11533</xref> and
+                    download the <keyword>Microsoft File Checksum Integrity Verifier</keyword> from
+                        <keyword>Microsoft</keyword>.</cmd>
+            </step>
+            <step>
+                <cmd>Execute the downloaded package and proceed to extract the tool. Example:
+                        <filepath>c:\tools\</filepath></cmd>
+            </step>
+            <step>
+                <cmd>Compute both <keyword>MD5</keyword> and <keyword>SHA1</keyword> for all files
+                    in the <filepath>PuTTY</filepath> directory:</cmd>
+                <stepxmp>
+                    <codeblock>PS C:\Tools\PuTTY> C:\Tools\fciv.exe -both -wp C:\Tools\PuTTY</codeblock>
+                    <screen>//
+// File Checksum Integrity Verifier version 2.05.
+//
+                MD5                             SHA-1
+-------------------------------------------------------------------------
+51bd1bf6d054a01c8e556ecfa705b537 bea6fedf753178170aa45708e902c2c48b9d5bc8 PAGEANT.EXE
+07d07cc89c7b25229b3b999724bd3e5b e79298341d580033c6011ee0eef51fd5c9693c6b PLINK.EXE
+b9735750b270236fb5228f4a344b22ef ec11523186a2cbba7bc3f68cba1a5ae36065fd4a PSCP.EXE
+d83d91061fbd0a270883cee9ac6129a9 ac37ac13032672e59da953cabf14ceff9f2082a4 PSFTP.EXE
+a51cb0942adc0c78ae3d1ee6e0ebfa08 653f7e757207a81d48ec9a46811b32d51a8a7d54 PUTTY.CHM
+608ba22d585805f56ed6682c8a42392e 10a8d18c78a41b45a27caec959283b98dac1147c PUTTY.CNT
+354d9abefa0ed67a08bd056324284d6e 91b21fffe934d856c43e35a388c78fccce7471ea PUTTY.EXE
+c2bcb4d56fd986b1ad94b595817ae996 99990e52bce8b05d73f31a88baa67a8e94f5f4ef PUTTY.HLP
+476992da1f015286c4fc70e4a31f5bfc 7fe800fdd10136adabb2ed5df80fe6a62759755c putty.zip
+be49685e80862a4a49c06bb2545a6f4e 54c8601236dfe90b2e3e62f74155709d0231dcb2 PUTTYGEN.EXE</screen>
+                </stepxmp>
+            </step>
+            <step>
+                <cmd>Compare these to the checksums listed on the PuTTY site:</cmd>
+                <stepxmp>MD5:<screen>a51cb0942adc0c78ae3d1ee6e0ebfa08  putty.chm
+608ba22d585805f56ed6682c8a42392e  putty.cnt
+c2bcb4d56fd986b1ad94b595817ae996  putty.hlp
+07d07cc89c7b25229b3b999724bd3e5b  x86/plink.exe
+51bd1bf6d054a01c8e556ecfa705b537  x86/pageant.exe
+be49685e80862a4a49c06bb2545a6f4e  x86/puttygen.exe
+476992da1f015286c4fc70e4a31f5bfc  x86/putty.zip
+b9735750b270236fb5228f4a344b22ef  x86/pscp.exe
+354d9abefa0ed67a08bd056324284d6e  x86/putty.exe
+d83d91061fbd0a270883cee9ac6129a9  x86/psftp.exe</screen>SHA1:<screen>653f7e757207a81d48ec9a46811b32d51a8a7d54  putty.chm
+10a8d18c78a41b45a27caec959283b98dac1147c  putty.cnt
+99990e52bce8b05d73f31a88baa67a8e94f5f4ef  putty.hlp
+e79298341d580033c6011ee0eef51fd5c9693c6b  x86/plink.exe
+bea6fedf753178170aa45708e902c2c48b9d5bc8  x86/pageant.exe
+54c8601236dfe90b2e3e62f74155709d0231dcb2  x86/puttygen.exe
+7fe800fdd10136adabb2ed5df80fe6a62759755c  x86/putty.zip
+ec11523186a2cbba7bc3f68cba1a5ae36065fd4a  x86/pscp.exe
+91b21fffe934d856c43e35a388c78fccce7471ea  x86/putty.exe
+ac37ac13032672e59da953cabf14ceff9f2082a4  x86/psftp.exe</screen></stepxmp>
+            </step>
+        </steps>
+        <result>The binaries are intact and match the checksum.</result>
+        <postreq><xref href="Verify-PuTTY-Binaries-With-GPG-Against-the-RSA-Keys.dita"/> to ensure
+            they come from the author.</postreq>
+    </taskbody>
+</task>

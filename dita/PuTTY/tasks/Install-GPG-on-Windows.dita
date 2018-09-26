@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_ffk_q11_ws">
+    <title>Install GnuPG on Windows</title>
+    <shortdesc>The GNU Privacy Guard (GnuPG) is a free replacement for
+        <?oxy_comment_start author="cmihai" timestamp="20150731T150121-0400" comment="Reword"?>PGP<?oxy_comment_end?>. </shortdesc>
+    <taskbody>
+        <context/>
+        <steps id="steps_wvh_3b1_ws">
+            <step>
+                <cmd>Go to http://gpg4win.org/download.html and download
+                    <keyword>Gpg4win</keyword>.</cmd>
+            </step>
+            <step>
+                <cmd>Install <keyword>Gpg4win</keyword> on your system.</cmd>
+                <substeps id="substeps_bmz_221_ws">
+                    <substep>
+                        <cmd>Run the Gpg4win package you have downloaded.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Chose the installer language.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click <uicontrol>Next</uicontrol> to continue, then review the
+                                <wintitle>License Agreement</wintitle> and click
+                                <uicontrol>Next</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd><uicontrol>Select the components to install</uicontrol> (leave default
+                            options as selected) and click Next.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select a <uicontrol>Destination Folder</uicontrol> and click
+                                <uicontrol>Next</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Check Start Menu under <wintitle>Install Options</wintitle> and click
+                                <uicontrol>Next</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Use <keyword>Gpg4win</keyword> under <wintitle>Chose Start Menu
+                                Folder</wintitle> and click <uicontrol>Next</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>When prompted for <wintitle>Installation Complete</wintitle> click
+                                <uicontrol>Next</uicontrol>, then <uicontrol>Finish</uicontrol> to
+                            complete your installation.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <result>You now have GnuPG on your system.</result>
+        <postreq><xref href="Verify-PuTTY-Binaries-With-GPG-Against-the-RSA-Keys.dita"/></postreq>
+    </taskbody>
+</task>

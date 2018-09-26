@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_kqp_xs2_5s">
+    <title>Mount a remote filesystem over SSH</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>sshfs</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq/>
+        <context/>
+        <steps id="steps_c5f_mbn_vs">
+            <step>
+                <cmd/>
+            </step>
+            <step>
+                <cmd/>
+            </step>
+            <step>
+                <cmd/>
+            </step>
+        </steps>
+        <result/>
+        <postreq/>
+    </taskbody>
+    <related-links/>
+</task>

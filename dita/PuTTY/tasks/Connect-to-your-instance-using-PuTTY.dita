@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_hfd_hgl_5s">
+    <title>Connect to your instance using PuTTY</title>
+    <shortdesc>Connect to your instance using <keyword>SSH</keyword> with a
+            <keyword>Username</keyword> and <keyword>Password</keyword>.</shortdesc>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>PuTTY</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>Obtain the <keyword>Username</keyword> and <keyword>Password</keyword> associated
+            with your server (or log in from the local console).</prereq>
+        <context/>
+        <steps id="steps_uvm_4mm_5s">
+            <step>
+                <cmd>Start <cmdname>PuTTY.exe</cmdname> or your platform equivalent to begin
+                    connecting to your server.</cmd>
+            </step>
+            <step>
+                <cmd>In the <keyword>Session</keyword> category, set the basic options for your
+                    PuTTY session:</cmd>
+                <substeps id="substeps_jgr_w4b_vs">
+                    <substep>
+                        <cmd>Enter the <keyword>Host Name (or IP address)</keyword> of your
+                            server.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd importance="optional">Navigate to <menucascade>
+                    <uicontrol>Connection</uicontrol>
+                    <uicontrol>Data</uicontrol>
+                </menucascade> and provide a <uicontrol>Auto-login username</uicontrol>. You can
+                    also provide the username by prefixing the server address with
+                    <userinput>username@</userinput>.</cmd>
+                <stepxmp><userinput>root</userinput></stepxmp>
+                <info>This name will be automatically sent to the server.<note type="important">You
+                    should log in with a regular user account once you complete the steps <xref
+                        href="../../SSHD/tasks/Create-a-regular-user-account.dita"
+                    />.</note></info>
+            </step>
+            <step>
+                <cmd importance="optional">Navigate to the <uicontrol>Session</uicontrol> category
+                    and  save your session by providing a name in the <uicontrol>Saved
+                        Sessions</uicontrol> field and clicking on
+                    <uicontrol>Save</uicontrol>.</cmd>
+                <info>You can restore your connection options at a later date by selecting the
+                    desired session from the list and clicking <uicontrol>Load</uicontrol>.</info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Open</uicontrol> to initiate your PuTTY session.</cmd>
+            </step>
+        </steps>
+        <result>You are now connected to your instance.</result>
+        <postreq><xref href="Generate-SSH-Keys-with-PuTTYgen.dita"/>.</postreq>
+    </taskbody>
+    <related-links/>
+</task>

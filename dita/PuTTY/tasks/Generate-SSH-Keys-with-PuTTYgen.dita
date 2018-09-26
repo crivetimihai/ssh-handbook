@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_s24_312_5s">
+    <title>Generate SSH Keys with PuTTYgen</title>
+    <shortdesc>Generate PuTTY-format key (*.PPK) files used to permit SSH key based <keyword>Secure
+            Shell</keyword> access with tools such as <cmdname>pagent</cmdname>,
+            <cmdname>pscp</cmdname>, <cmdname>psftp</cmdname> and
+        <cmdname>putty</cmdname>.</shortdesc>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-23"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>PuTTYgen</indexterm>
+                <indexterm>PPK</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>You will need to install <keyword>PuTTYgen</keyword> and <keyword>PuTTY</keyword> as
+            described in <xref href="Download-and-unzip-the-PuTTY-binaries.dita"/>.</prereq>
+        <context>
+            <p>This task normally applies to <keyword>Windows</keyword> systems using
+                    <keyword>PuTTY</keyword>, through the same steps apply also if you are using
+                    <keyword>PuTTY</keyword> on <keyword>Linux</keyword> or another
+                    platform<fn>While PuTTY is also available on Linux and other platforms, the
+                    OpenSSH client <cmdname>ssh</cmdname> is more commonly used.</fn>.<note
+                    type="attention"> You only need to perform this task once, as the <keyword>private
+                        key</keyword> can be used to access multiple systems that are configured to
+                    permit access to you via your <keyword>public key</keyword>.</note><note>By
+                    default, <keyword>PuTTY</keyword> uses keys in the <keyword>PPK</keyword>
+                    format, but <keyword>PuTTYgen</keyword> can be used to convert keys to the more
+                    common OpenSSH format, as described in <xref
+                        href="Convert-SSH-Keys-to-and-from-OpenSSH-formats-with-PuTTYgen.dita"
+                    />.</note></p>
+        </context>
+        <steps id="steps_nq3_hc2_5s">
+            <step>
+                <cmd>Start <cmdname>PuttyGen.exe</cmdname> or your platform equivalent to begin
+                    generating your <keyword>SSH</keyword> key pair.</cmd>
+                <stepxmp><image href="../../../images/PuTTYgen-Interface.png" id="image_o23_fff_5s">
+                        <alt>PuTTYGen Interface screen</alt>
+                    </image>
+                </stepxmp>
+            </step>
+            <stepsection><b>Key generation options:</b></stepsection>
+            <step>
+                <cmd>In the <uicontrol>Parameters</uicontrol> section, select your key generation
+                    options:</cmd>
+                <substeps id="substeps_iqg_ysf_5s">
+                    <substep>
+                        <cmd>Select the <uicontrol>type of key you wish to
+                            generate</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select the <uicontrol>number of bits in a generated
+                                key</uicontrol><fn>For RSA, minimum bit size is 768 and default is
+                                2048.</fn></cmd>
+                    </substep>
+                </substeps>
+                <info>The SSH-1 protocol only supports RSA. SSH-2<fn>SSH-2 is a revised version of
+                        the SSH protocol and features security and feature improvements over
+                        SSH-1.</fn> supports both RSA and DSA keys. Using SSH-2 RSA is strongly
+                    recommended for security reasons.</info>
+                <stepxmp>Select SSH-2 RSA and <userinput>4096</userinput> bits.</stepxmp>
+            </step>
+            <stepsection><b>Generate your key:</b></stepsection>
+            <step>
+                <cmd>Click <uicontrol>Generate</uicontrol> to create a public/private key
+                    pair.</cmd>
+            </step>
+            <step>
+                <cmd>Move your mouse randomly over the progress bar to generate entropy.</cmd>
+                <info>Moving your mouse around in the blank area is used to generate additional
+                    randomness to ensure that strong keys are generated.</info>
+            </step>
+            <stepsection><b>Configure your generated key:</b></stepsection>
+            <step>
+                <cmd importance="recommended">Provide a <uicontrol>Key comment</uicontrol> to be
+                    associated with your key. A common convention is to use your name and the
+                    systems it will be used on.</cmd>
+                <stepxmp>name@site</stepxmp>
+            </step>
+            <step>
+                <cmd importance="recommended">Optional: Provide and confirm the <uicontrol>Key
+                        passphrase</uicontrol> that will be used to unlock your key every time it
+                    used, or when you add it to an SSH agent<fn>An SSH agent runs for the duration
+                        of your local operating system session, and stores one or more (unlocked)
+                        keys in memory, enabling SSH access without having to unlock your key each
+                        time it is used. For example, keys loaded in <cmdname>Pageant</cmdname> can
+                        be used automatically by <cmdname>PuTTY</cmdname>, <cmdname>PSCP</cmdname>,
+                            <cmdname>PSFTP</cmdname>, <cmdname>Plink</cmdname>,
+                            <cmdname>WinSCP</cmdname>, <cmdname>FileZilla</cmdname> and other tools
+                        that support the protocol, without the need for you to type a key passphrase
+                        each time.</fn>.</cmd>
+                <info>It is highly recommended that you set a passphrase on your SSH key.
+                        <cmdname>PuTTY Agent</cmdname> or <cmdname>ssh-agent</cmdname> can be used
+                    to unlock your key and still permit password-less SSH for automation purposes as
+                    long as the agent is running.</info>
+                <stepxmp>Provide a strong alphanumeric passphrase of considerable length, composed
+                    of lowercase, uppercase and special characters.</stepxmp>
+            </step>
+            <stepsection><b>Save your generated key:</b></stepsection>
+            <step>
+                <cmd>Click <uicontrol>Save private key</uicontrol> and provide the file path to the
+                    location you wish to save your key in.</cmd>
+                <info>This is your <b>private</b> key. Do not share it with anyone else. If another
+                    person (or service) requires access to the server they should use their own
+                    private / public key pair.<note type="restriction">Permissions on your key
+                        should be set as such they don't permit other users from copying your key.
+                        For example, on Linux you would set permissions to owner read only, like
+                        this: <cmdname>chmod 400 my_key</cmdname>.</note></info>
+                <stepresult>Your PuTTY-format key (*.PPK) has been saved to the specified
+                    location.</stepresult>
+            </step>
+            <step>
+                <cmd importance="optional">Click <uicontrol>Save public key</uicontrol> and save
+                    your public key.</cmd>
+                <info>This will save the public key in <xref
+                        href="https://tools.ietf.org/html/rfc4716" format="html" scope="external"
+                        >RFC 4716</xref> standard SSH-2 format, as used by SSH.com. This is not
+                    generally required for <xref href="http://www.openssh.com/" format="html"
+                        scope="external">OpenSSH</xref> (as found on most <keyword>Linux</keyword>
+                    systems. Instead you should use the public key format described in the next step.</info>
+            </step>
+            <step>
+                <cmd>Copy the text from the <uicontrol>Public key for pasting into OpenSSH
+                        authorized_keys file</uicontrol> field.</cmd>
+                <info>This key is normally placed in the user directory
+                        <filepath>~/.sshd/authorized_hosts</filepath> for each of the servers you
+                    wish to access using SSH. As the name suggests this key is public and can be
+                    used to provide access to resources (such as servers) to anyone who has your
+                    private key (ideally, only you).
+		    <note type="tip">You can re-generate your <keyword>public
+                            key</keyword> from your <keyword>private key</keyword>, if needed. You
+                        can do so by loading an existing private key in <keyword>PuTTYgen</keyword>
+                        by clicking the Load button. If the key is in a different format than
+                            <keyword>PuTTY</keyword>
+                        <keyword>PPK</keyword>, you will use the <menucascade>
+                            <uicontrol>Conversions</uicontrol>
+                            <uicontrol>Import</uicontrol>
+                        </menucascade> menu instead.</note></info>
+            </step>
+            <step>
+                <cmd>Exit the <keyword>PuTTY Key Generator</keyword> by clicking on <menucascade>
+                        <uicontrol>File</uicontrol>
+                        <uicontrol>Exit</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+        </steps>
+        <result>You have generated a <keyword>private</keyword> and <keyword>public</keyword> key
+            pair for use with <keyword>PuTTY</keyword> tools. Notice also that a <uicontrol>Key
+                fingerprint</uicontrol><fn>Public Key Fingerprint - short cryptographic hash (like
+                SHA-256) of your public key used to identify it visually.</fn> was generated for
+		your public key. This can be used to quickly identify your key, without having to
+	compare the entire public key.</result>
+        <example><image href="../../../images/PuTTYgen-Generated-Key.png" id="image_v4t_4lf_5s">
+                <alt>PuTTYgen Generated Key screen</alt>
+            </image></example>
+        <postreq>You can now <xref
+                href="Upload-your-public-key-to-an-existing-server.dita"/> to allow
+                <keyword>SSH</keyword> key access by editing your system user's
+                <filepath>authorized_hosts</filepath> file, <xref
+                href="Connect-to-your-instance-via-SSH-using-PuTTY-and-SSH-Keys.dita"/>, <xref
+                href="Transfer-files-to-and-from-your-instance-with-pscp.dita"/>, <xref
+                href="../../Tips-and-Tricks/tasks/Copy-files-with-WinSCP.dita"/>, <xref
+                href="Convert-SSH-Keys-to-and-from-OpenSSH-formats-with-PuTTYgen.dita"/> or <xref
+                href="Set-up-SSH-key-management-with-PuTTY-Agent.dita"/>.</postreq>
+    </taskbody>
+    <related-links>
+        <link href="http://the.earth.li/%7Esgtatham/putty/0.64/htmldoc/Chapter8.html#pubkey"
+            format="html" scope="external">
+            <linktext>PuTTY Documentation - Chapter 8: Using public keys for SSH authentication</linktext>
+        </link>
+        <link href="http://csrc.nist.gov/publications/nistpubs/800-131A/sp800-131A.pdf"
+            format="html" scope="external">
+            <linktext>NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic
+                Algorithms and Key Lengths</linktext>
+        </link>
+    </related-links>
+</task>

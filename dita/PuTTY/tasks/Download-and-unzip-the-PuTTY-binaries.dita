@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_wpy_112_5s">
+    <title>Download and unzip the PuTTY binaries</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-23"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>PuTTY Website</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq/>
+        <context/>
+        <steps id="steps_pwh_hp3_5s">
+            <step>
+                <cmd>Open your Web Browser and navigate to the PuTTY homepage at <xref
+                        href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/" format="html"
+                        scope="external"
+                    >http://www.chiark.greenend.org.uk/~sgtatham/putty/</xref></cmd>
+                <info>You will be presented with the <keyword>PuTTY</keyword> home page (at the time
+                    of this writing).<note type="warning">The link provided above is for a 3rd party
+                        website that hosts the PuTTY binaries. The link or availability of PuTTY at
+                        a later date may differer.</note></info>
+            </step>
+            <step>
+                <cmd>Click on the <uicontrol>Download</uicontrol> link and download the latest
+                    version of PuTTY:</cmd>
+                <info>You can also download a <b>ZIP</b> file containing all binaries and help
+                    files.</info>
+            </step>
+            <step>
+                <cmd>Unzip or place the downloaded files in a local directory.</cmd>
+            </step>
+            <step>
+                <cmd importance="recommended"><xref
+                        href="Verify-MD5-and-SHA1-checksum-on-Windows.dita"/>.</cmd>
+            </step>
+            <step>
+                <cmd importance="recommended"><xref
+                        href="Verify-PuTTY-Binaries-With-GPG-Against-the-RSA-Keys.dita"/>.</cmd>
+                <info>The PuTTY website provides RSA keys compatible with both GnuPG and PGP2. This
+                    document provides instructions for installing GnuPG from the Gpg4win
+                    distribution on Windows, here: <xref href="Install-GPG-on-Windows.dita"
+                    />.</info>
+            </step>
+        </steps>
+        <result>You now have PuTTY on your machine.</result>
+        <postreq>You can now <xref href="Generate-SSH-Keys-with-PuTTYgen.dita"/>.</postreq>
+    </taskbody>
+    <related-links>
+        <link href="http://the.earth.li/%7Esgtatham/putty/0.65/htmldoc/AppendixE.html#pgpkeys"
+            format="html" scope="external">
+            <linktext>PuTTY Manual - Appendix E: PuTTY download keys and signatures</linktext>
+        </link>
+        <link href="https://tools.ietf.org/html/rfc3174" format="html" scope="external">
+            <linktext>IETF Request for Comments: 3174 - US Secure Hash Algorithm 1 (SHA1)</linktext>
+        </link>
+    </related-links>
+</task>

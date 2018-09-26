@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_esk_511_ws">
+    <title>Verify the PuTTY signature using GPG and RSA keys</title>
+    <shortdesc>Verify that the PuTTY binaries are signed with the author's key.</shortdesc>
+    <taskbody>
+        <context>
+            <p>Verify the signature:<codeblock>gpg --verify putty.zip.RSA putty.zip</codeblock></p>
+        </context>
+        <result>You have verified that the putty bundle is signed by the author.</result>
+        <postreq>Use PuTTY.</postreq>
+    </taskbody>
+</task>

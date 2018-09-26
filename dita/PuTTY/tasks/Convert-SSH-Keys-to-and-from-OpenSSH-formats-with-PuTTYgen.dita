@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_kd1_k12_5s">
+    <title>Convert SSH Keys to and from OpenSSH formats with PuTTYgen</title>
+    <shortdesc>Convert your private key to and from other formats for use with
+            <keyword>PuTTY</keyword> or <keyword>OpenSSH</keyword>.</shortdesc>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-24"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>PuTTYgen</indexterm>
+                <indexterm>PPK</indexterm>
+                <indexterm>RSA</indexterm>
+                <indexterm>DSA</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>You will need to install <keyword>PuTTYgen</keyword> - as described in <xref
+                href="Download-and-unzip-the-PuTTY-binaries.dita"/>.</prereq>
+        <context>This task normally applies to <keyword>Windows</keyword> systems using
+                <keyword>PuTTY</keyword> - through the same steps apply if you are using
+                <keyword>PuTTY</keyword> on <keyword>Linux</keyword> or another platform.</context>
+        <steps id="steps_tt2_fj3_5s">
+            <step>
+                <cmd>Start <cmdname>PuttyGen.exe</cmdname> or your platform equivalent to begin
+                    generating your <keyword>SSH</keyword> key pair.</cmd>
+            </step>
+            <step>
+                <cmd>Click on <menucascade>
+                        <uicontrol>Conversions</uicontrol>
+                        <uicontrol>Import</uicontrol>
+                    </menucascade> and select your Private key in OpenSSH format.</cmd>
+                <stepxmp><filepath>~/.ssh/id_rsa</filepath></stepxmp>
+                <info>If your key is protected by a passphrase, you will need to enter the
+                    passphrase to unlock your key.</info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Save private key</uicontrol> and save your private key in a
+                    safe location.</cmd>
+            </step>
+        </steps>
+        <result>You have converted your <keyword>private</keyword> key to the <keyword>PPK</keyword>
+            format used by <keyword>PuTTY</keyword> tools.</result>
+        <postreq>You can now <xref
+                href="Upload-your-public-key-to-an-existing-server.dita"/> to allow
+                <keyword>SSH</keyword> key access by editing your system user's
+                <filepath>authorized_hosts</filepath> file, <xref
+                href="Connect-to-your-instance-via-SSH-using-PuTTY-and-SSH-Keys.dita"/>, <xref
+                href="Transfer-files-to-and-from-your-instance-with-pscp.dita"/>, <xref
+                href="../../Tips-and-Tricks/tasks/Copy-files-with-WinSCP.dita"/>, or <xref
+                href="Set-up-SSH-key-management-with-PuTTY-Agent.dita"/>.</postreq>
+    </taskbody>
+    <related-links>
+    </related-links>
+</task>

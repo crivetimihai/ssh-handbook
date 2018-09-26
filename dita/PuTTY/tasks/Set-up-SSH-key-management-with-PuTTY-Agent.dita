@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_ztp_l12_5s">
+    <title>Set up SSH key management with PuTTY Agent</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>pagent</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <context/>
+        <steps id="steps_art_1zm_vs">
+            <step>
+                <cmd>Start <cmdname>PAGEANT.EXE</cmdname> or your platform equivalent to start using
+                    a SSH agent.</cmd>
+                <info><keyword>PuTTY Agent</keyword> will start minimized to the system tray.</info>
+            </step>
+            <step>
+                <cmd>Add one or more <keyword>SSH</keyword> keys to <keyword>PuTTY
+                    Agent</keyword>:</cmd>
+                <substeps id="substeps_pzw_cw5_vs">
+                    <substep>
+                        <cmd>Right click the <keyword>PuTTY Agent</keyword> icon in the system tray
+                            and click <keyword>Add Key</keyword>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd importance="optional">If your key is passphrase protected, you will be
+                            prompted to enter the passphrase associated with your key. The
+                                <keyword>key comment</keyword> associated with this key will display
+                            above the passphrase prompt to aid in identifying the key.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <result><keyword>SSH Agent</keyword> will now keep a unlocked key in memory during the
+            duration of your local system session, and present it automatically to supported tools
+            like <keyword>PuTTY</keyword> whenever you connect to a <keyword>SSH</keyword> enabled
+            server. </result>
+        <postreq><xref href="Connect-to-your-instance-via-SSH-using-PuTTY-and-SSH-Keys.dita"/>. You
+            do not need to specify a key in the PuTTY configuration, as this will be taken
+            automatically from SSH Agent.</postreq>
+    </taskbody>
+    <related-links>
+        <link href="http://the.earth.li/%7Esgtatham/putty/0.58/htmldoc/Chapter9.html" format="html"
+            scope="external">
+            <linktext>PuTTY Documentation - Chapter 9: Using Pageant for authentication</linktext>
+        </link>
+    </related-links>
+</task>

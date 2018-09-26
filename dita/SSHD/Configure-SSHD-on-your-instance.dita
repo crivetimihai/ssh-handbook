@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_f4k_tn2_5s">
+  <title>Configure SSHD on your instance</title>
+  <prolog>
+    <author>Mihai Criveti</author>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>Mihai Criveti</copyrholder>
+    </copyright>
+    <critdates>
+      <created date="2015-07-23"/>
+      <revised modified="2015-07-27"/>
+    </critdates>
+    <metadata>
+      <category>SSH</category>
+      <keywords>
+        <indexterm>sshd</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p></p>
+  </body>
+  <related-links>
+  </related-links>
+</topic>

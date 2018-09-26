@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA 1.3 Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="trouble_mqh_1gx_vs">
+  <title>Troubleshooting SSH</title>
+  <troublebody>
+    <condition>
+      <!--
+ The topic title and the shortdesc should have already told your reader a lot about the
+ condition that this topic seeks to fix. Use condition to expand upon that. Do not simply
+ repeat what you have already put into the title and the shortdesc. Condition is the
+ appropriate place to put impact and severity information. If multiple solutions exist and
+ their relationships with each other are complex, you can discuss that here.-->
+      <title><!-- Optional title. Use "Condition". --></title>
+      <p/>
+    </condition>
+    <troubleSolution>
+      <!--
+ troubleSolution is meant to hold pairs of cause and remedy. Occassionally, you might have cause without remedy or remedy without cause, but that should be rare. Be sure to order mutliple troubleSolution elements in a sequence that makes sense. For example, order them by the likelihood of a cause occuring. You may wish to deviate from that if a remedy for a less likely cause is much easier to try. Remember to use conref for troubleSolution elements that are the same across multiple troubleshooting topics.-->
+      <cause>
+        <title><!--
+ Optional title. Use "Cause". For topics with mutliple troubleSolutions, state the
+ essential nature of this particular cause instead of just using "Cause".-->
+        </title>
+        <p/>
+      </cause>
+      <remedy>
+        <title><!-- Optional title. Use "Remedy" or "Solution". -->
+        </title>
+        <responsibleParty><!--
+ Optional. Use this element to indicate the role of who ought to be performing the steps in the remedy. Here are some examples: "engineer", "customer", "field-support".
+ --></responsibleParty>
+        <!-- You can use steps-unordered or steps-informal instead of steps. -->
+        <steps>
+          <!--
+ Remember that you can use conref to bring in steps from tasks or other
+ troubleshooting topics. -->
+          <step>
+            <cmd/>
+          </step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

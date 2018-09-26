@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ums_zyd_5s">
+  <title>Using OpenSSH on Linux and Mac</title>
+  <prolog>
+    <author>Mihai Criveti</author>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>Mihai Criveti</copyrholder>
+    </copyright>
+    <critdates>
+      <created date="2015-07-23"/>
+      <revised modified="2015-07-27"/>
+    </critdates>
+    <metadata>
+      <category>SSH</category>
+      <keywords>
+        <indexterm>OpenSSH</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p></p>
+  </body>
+</topic>

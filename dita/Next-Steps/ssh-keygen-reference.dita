@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_yjm_vxb_ws">
+ <title>SSH Keygen Reference</title>
+ <conbody>
+  <!-- 
+ssh-keygen
+         ::= ( "-q" )?
+             | ( "-b" ( bits ))? |
+             | ( "-t" ( dsa | ecdsa | ed25519 | rsa | rsa1 ))?
+             | ( "-N" ( new_passphrase ) )?
+             | ( "-C" ( comment ) )?
+             | ( "-f" ( output_keyfile ) )?
+
+changing-the-passphrase
+         ::= ( "-p" ) 
+               (( "-P" ( old_passphrase ))
+             | ( "-N" ( new_passphrase ))
+             | ( "-f" ( keyfile )))
+
+import-keys-file
+         ::= ( "-i" ) 
+               (( "-m" ( key_format ))
+             | ( "-f" ( input_keyfile )))
+
+export-key-file
+         ::= ( "-e" ) 
+               (( "-m" ( key_format ))
+             | ( "-f" ( input_keyfile )))
+
+generate-public-key-from-private-key
+         ::= ( "-y" )
+             | ( "-f" ( input_keyfile ))  
+  
+  -->
+  <section>
+   <title>NAME</title>
+   <p>ssh-keygen — authentication key generation, management and conversion</p>
+  </section>
+  <section>
+   <title>Generate SSH keys</title>
+   <p>
+    <table frame="none" rowsep="0" colsep="0" id="table_y2p_bcc_ws">
+     <title>ssh-keygen syntax</title>
+     <tgroup cols="2">
+      <colspec colname="c1" colnum="1" colwidth="1.0*" align="left" colsep="0"/>
+      <colspec colname="c2" colnum="2" colwidth="1.0*" colsep="0" rowsep="0"/>
+      <tbody>
+       <row>
+        <entry><image href="../../images/image.svg" id="image_vgj_f1c_ws"/><p>
+          <syntaxdiagram id="syntaxdiagram_elm_22c_ws">
+           <title>ssh-keygen</title>
+           <groupcomp>
+            <kwd>-q</kwd>
+           </groupcomp>
+           <groupcomp>
+            <kwd>-b</kwd>
+            <var>bits</var>
+           </groupcomp>
+           <groupcomp>
+            <kwd>-N</kwd>
+            <var>new_passphrase</var>
+           </groupcomp>
+           <groupcomp>
+            <kwd>-t</kwd>
+            <groupchoice>
+             <var>dsa</var>
+             <var>ecdsa</var>
+             <var>ed25519</var>
+             <var>rsa</var>
+             <var>rsa1</var>
+            </groupchoice>
+           </groupcomp>
+           <groupcomp>
+            <kwd>-N</kwd>
+            <var>new_passphrase</var>
+           </groupcomp>
+           <groupcomp>
+            <kwd>-C</kwd>
+            <var>comment</var>
+           </groupcomp>
+           <groupseq>
+            <kwd>-f</kwd>
+            <var>output_keyfile</var>
+           </groupseq>
+          </syntaxdiagram>
+         </p></entry>
+        <entry><b>Description:</b><p><b>-q</b></p><p>Silence ssh-keygen. </p><p><b>-b
+          bits</b></p><p>Specifies the number of bits in the key to create. For RSA keys, the
+          minimum size is 768 bits and the default is 2048 bits. Generally, 2048 bits is considered
+          sufficient. DSA keys must be exactly 1024 bits as specified by FIPS 186-2. For ECDSA keys,
+          the -b flag determines the key length by selecting from one of three elliptic curve sizes:
+          256, 384 or 521 bits. Attempting to use bit lengths other than these three values for
+          ECDSA keys will fail. Ed25519 keys have a fixed length and the -b flag will be
+          ignored.</p><p><b>-N new_passphrase</b></p><p>Provides the new passphrase.</p><p><b>-C
+           comments</b></p><p>Provides a new comment.</p><p><b>-f filename</b></p><p>Specifies the
+          filename of the key file.</p></entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </table>
+   </p>
+   <p><b>Example:</b><codeblock>ssh-keygen -b 4096 \
+    -t rsa \
+    -C "you@example.com" \
+    -f ~/.ssh/id_rsa</codeblock><b>Output:</b><screen>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/cmihai/.ssh/id_rsa.
+Your public key has been saved in /home/cmihai/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:d8Mh5ffUFg1eAho7C4eg0IOFKih7AWDpVCIfPkS6Hl0 you@example.com
+The key's randomart image is:
++---[RSA 4096]----+
+|++B*. .   . o.ooo|
+|+B+oo. . . * . o+|
+|=o+ .E  o * o o +|
+|=oo..    o = o + |
+|+o o    S o +   .|
+|o o      . . .   |
+| o               |
+|                 |
+|                 |
++----[SHA256]-----+</screen></p>
+  </section>
+ </conbody>
+</concept>

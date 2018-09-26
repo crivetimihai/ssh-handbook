@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sc4_xyd_5s">
+  <title>Using PuTTY on Windows</title>
+  <abstract>PuTTY is a free implementation of SSH for Windows and UNIX and a xterm emulator written
+    and maintianed primarily by Simon Tatham.</abstract>
+  <prolog>
+    <author>Mihai Criveti</author>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>Mihai Criveti</copyrholder>
+    </copyright>
+    <critdates>
+      <created date="2015-07-23"/>
+      <revised modified="2015-07-27"/>
+    </critdates>
+    <metadata>
+      <category>SSH</category>
+      <keywords>
+        <indexterm>PuTTY</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p><b>The following tools from the PuTTY family are described in this section:</b><ul
+        id="ul_btn_fzz_vs">
+        <li>PuTTY (the Telnet and SSH client itself).</li>
+        <li>PSCP (an SCP client, i.e. command-line secure file copy).</li>
+        <li>PSFTP (an SFTP client, i.e. general file transfer sessions much like FTP).</li>
+        <li>PuTTYtel (a Telnet-only client).</li>
+        <li>Plink (a command-line interface to the PuTTY back ends).</li>
+        <li>Pageant (an SSH authentication agent for PuTTY, PSCP, PSFTP, and Plink).</li>
+        <li>PuTTYgen (an RSA and DSA key generation utility).</li>
+      </ul></p>
+    <p><b>Additional supporting tools are also described:</b></p>
+    <p>
+      <ul id="ul_nxp_szz_vs">
+        <li>XMing - a X Server for Windows (used to show running GUI applications over SSH).</li>
+        <li>GNU Privacy Guard (GnuPG) - free implementation of the OpenPGP standard (used to verify
+          PuTTY download keys and signatures).</li>
+      </ul>
+    </p>
+  </body>
+</topic>

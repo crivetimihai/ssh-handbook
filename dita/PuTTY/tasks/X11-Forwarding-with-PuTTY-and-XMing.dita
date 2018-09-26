@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_azr_s1c_vs">
+    <title>X11 Forwarding with PuTTY and XMing</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>XMing</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>Install XMing:</prereq>
+        <context/>
+        <steps id="steps_lrc_hzm_vs">
+            <step>
+                <cmd>In the PuTTY configuration - navigate to <menucascade>
+                        <uicontrol>Connection</uicontrol>
+                        <uicontrol>SSH</uicontrol>
+                        <uicontrol>X11</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+            <step>
+                <cmd>Check the <uicontrol>Enable X11 forwarding</uicontrol> checkbox.</cmd>
+            </step>
+            <step>
+                <cmd>Type in the <keyword>X display location</keyword>.</cmd>
+                <info>This is the location displayed by XMing (or another X11 server), such as
+                        <codeph>localhost:0.0</codeph></info>
+            </step>
+        </steps>
+        <result>You can now tunnel <keyword>X11</keyword> applications to your local
+                <keyword>X11</keyword> server using <keyword>SSH</keyword>.</result>
+        <postreq>Run a GUI application and test that it functions correctly. Please note that
+                <keyword>X11</keyword> forwarding does not preserve your graphical session after
+            closing SSH. Look at VNC in <xref href="../../GUI/GUI-Access-with-VNC-and-RDP.dita"/> if
+            you wish to preserve your X11 session.</postreq>
+    </taskbody>
+    <related-links>
+        <link
+            href="http://the.earth.li/%7Esgtatham/putty/0.58/htmldoc/Chapter3.html#using-x-forwarding"
+            format="html" scope="external">
+            <linktext>PuTTY Manual - Using X11 forwarding in SSH</linktext>
+        </link>
+    </related-links>
+</task>

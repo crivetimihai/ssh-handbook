@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_s1r_4s2_5s">
+    <title>Create a SOCKS proxy with PuTTY</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>SOCKS</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>Perform the steps in <xref href="Connect-to-your-instance-using-PuTTY.dita"/> and
+            save your session.</prereq>
+        <context/>
+        <steps id="steps_klb_dzm_vs">
+            <step>
+                <cmd>In the PuTTY configuration - navigate to <menucascade>
+                        <uicontrol>Connection</uicontrol>
+                        <uicontrol>SSH</uicontrol>
+                        <uicontrol>Tunnels</uicontrol>
+                    </menucascade>.</cmd>
+            </step>
+            <step>
+                <cmd><uicontrol>Add a new forwarded port</uicontrol></cmd>
+                <substeps id="substeps_w31_x1v_vs">
+                    <substep>
+                        <cmd>Provide a available Source port (on your machine), such as 8888.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select the <uicontrol>Dynamic</uicontrol> radio button.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click <uicontrol>Add</uicontrol>.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Navigate to Session and save your <keyword>PuTTY</keyword>
+                            session.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Open</uicontrol> to connect to your system.</cmd>
+            </step>
+            <step>
+                <cmd>Configure your Web Browser to use the port configured above as a SOCKS5
+                    proxy.</cmd>
+            </step>
+        </steps>
+        <result>Your Web Browser connections will now flow through your SSH host.</result>
+        <postreq/>
+    </taskbody>
+    <related-links/>
+</task>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_mkp_m12_5s">
+    <title>Set up TCP tunnels over SSH using PuTTY</title>
+    <?oxy_comment_start author="cmihai" timestamp="20150731T145717-0400" comment="Rewrite this text completely"?>
+    <shortdesc><?oxy_comment_end?>SSH can be used to perform TCP port forwarding. One use case for
+        this would be securely connecting to a VNC or RDP server over an encrypted SSH
+        tunnel.</shortdesc>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>Tunnel</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>We assume that you have setup SSH keys as described in <xref
+                href="Generate-SSH-Keys-with-PuTTYgen.dita"/>.</prereq>
+        <context>You can tunnel other types of network traffic through an encrypted SSH tunnel using
+            TCP port forwarding over your SSH session. The following steps describe how to forward a
+            single port (such as 3390), commonly used for RDP from your instance to your local
+            machine.</context>
+        <steps id="steps_h4x_cfk_5s">
+            <step>
+                <cmd>Start PuTTY. In the <uicontrol>hostname</uicontrol> field, type the Public IP
+                    address of your Linux instance.</cmd>
+            </step>
+            <step>
+                <cmd importance="recommended">In Category box, click SSH, select the Compression
+                    checkbox.</cmd>
+            </step>
+            <step>
+                <cmd>Expand SSH and click Auth. Load your encrypted key (.PPK format) by clicking
+                    Browse and navigating to the location where you .PPK key is stored.</cmd>
+            </step>
+            <step>
+                <cmd>Click Tunnel. Then, select a Source port to be used on your local machine (for
+                    example, 3390 in case you want to use RDP. You cannot use 3389 as default port
+                    of RDP because it is used by your local machine in case your machine is running
+                    on Windows) and a Destination to be forwarded (for example,
+                    10.10.10.23:3389).</cmd>
+            </step>
+            <step>
+                <cmd>Click Session from Category box. Add a name to your session, save your settings
+                    and click Open.</cmd>
+                <info>
+                    <note>You may forward multiple ports on any one connection. You can have
+                        multiple static and dynamic port forwarding on the same session.</note>
+                </info>
+            </step>
+            <step>
+                <cmd>Connect to RDP through 127.0.0.2:3390 (the port which was configured in step
+                    4).</cmd>
+            </step>
+        </steps>
+        <result/>
+        <postreq>For additional details and uses additional uses (such as forwarding a port from
+            your machine or using dynamic port forwarding) see The Tunnels panel section of the
+            PuTTY User Manual.</postreq>
+    </taskbody>
+    <related-links/>
+</task>

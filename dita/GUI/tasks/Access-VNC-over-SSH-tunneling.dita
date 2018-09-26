@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_p4w_ky2_5s">
+    <title>Access VNC over SSH tunneling</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>GUI</category>
+            <keywords>
+                <indexterm>VNC</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq/>
+        <context/>
+        <steps id="steps_qtw_51n_vs">
+            <step>
+                <cmd/>
+            </step>
+            <step>
+                <cmd/>
+            </step>
+            <step>
+                <cmd/>
+            </step>
+        </steps>
+        <result/>
+        <postreq/>
+    </taskbody>
+    <related-links/>
+</task>

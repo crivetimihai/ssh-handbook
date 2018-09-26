@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_rld_l12_5s">
+    <title>Upload your public key to an existing server</title>
+    <shortdesc/>
+    <prolog>
+        <author>Mihai Criveti</author>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Mihai Criveti</copyrholder>
+        </copyright>
+        <critdates>
+            <created date="2015-07-23"/>
+            <revised modified="2015-07-27"/>
+        </critdates>
+        <metadata>
+            <category>SSH</category>
+            <keywords>
+                <indexterm>authorized_keys</indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody>
+        <prereq>You need a private key, a public key in OpenSSH format, an existing Linux server
+            instance that you can access with a username and password. <note>This is the password usually
+                set during OS installation.</note><note type="important">As a best practice, you should first
+                create a non-privileged username and password, as described in <xref
+                    href="../../SSHD/tasks/Create-a-regular-user-account.dita"/>, and <xref
+                    href="../../SSHD/tasks/Configure-sudo-for-your-user.dita"/>.</note></prereq>
+        <context/>
+        <steps id="steps_abj_2gl_5s">
+            <step>
+                <cmd>Log into your instance as described in <xref
+                        href="Connect-to-your-instance-using-PuTTY.dita"/>.</cmd>
+            </step>
+            <step>
+                <cmd>Add your <keyword>OpenSSH</keyword> format public key in the
+                        <filepath>~/.ssh/authorized_key</filepath> file.</cmd>
+                <info>
+                    <note>We are adding a SSH-2 public key, thus we are using the
+                            <filepath>authorized_keys2</filepath> file.</note>
+                </info>
+                <stepxmp><codeblock>[[ -d ~/.ssh ]] || mkdir -p ~/.ssh # Create the ~/.ssh directory if it does not exist
+$EDITOR ~/.ssh/authorized_keys # Use the configured editor to create or edit the authorized_hosts file
+</codeblock>Place
+                    your public key in this file. This looks similar
+                    to:<screen>ssh-rsa AAAAB3NzaC1yc2EAAAAD[more text here] cmihai@ADMINIB-QTA7GRE</screen></stepxmp>
+            </step>
+            <step>
+                <cmd>Set restrictive permissions on the <filepath>authorized_keys</filepath> file
+                    and the ~/.ssh directory.</cmd>
+                <stepxmp><codeblock>chown -R $USER: ~/.ssh
+chmod 700 ~/.ssh
+chmod 400 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub 
+chmod 644 ~/.ssh/authorized_keys ~/.ssh/known_hosts</codeblock><note>Permissions
+                        should normally be:<ul id="ul_nq5_j5h_ws">
+                            <li>SSH Directory: ~/.ssh -> 700 (drwx------)</li>
+                            <li>Public keys: ~/.ssh/id_rsa.pub -> 644 (-rw-r--r--)</li>
+                            <li>Private keys: ~/.ssh/id_rsa -> 400 (-r--------)</li>
+                            <li>known_hosts: 644</li>
+                            <li>Owner and group: your user / your group</li>
+                            <li>Permissions on your home folder should not allow rw by group /
+                                other</li>
+                        </ul></note>If you see a screen like this, then the permissions are too
+                    open:<screen>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for '/home/cmihai/.ssh/id_rsa' are too open.
+It is recommended that your private key files are NOT accessible by others.
+This private key will be ignored.</screen></stepxmp>
+            </step>
+        </steps>
+        <result>You have uploaded your <keyword>public key</keyword> associated with your
+                <keyword>private key</keyword> to your instance.</result>
+        <postreq>You can now <xref
+                href="Connect-to-your-instance-via-SSH-using-PuTTY-and-SSH-Keys.dita"/>.</postreq>
+    </taskbody>
+    <related-links>
+        <link href="http://superuser.com/questions/215504/permissions-on-private-key-in-ssh-folder"
+            format="html" scope="external">
+            <linktext>SuperUser - Permissions on private key in .ssh folder</linktext>
+        </link>
+    </related-links>
+</task>

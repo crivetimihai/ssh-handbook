@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE learningAssessment PUBLIC "-//OASIS//DTD DITA Learning Assessment//EN" "learningAssessment.dtd">
+<learningAssessment id="assessment_f2m_22x_vs">
+ <title>Learning Assessment</title>
+ <shortdesc>This is a set of questions to check your understanding.</shortdesc>
+ <learningAssessmentbody>
+  <lcIntro>Good Luck!</lcIntro>
+  <lcInteraction>
+   <lcSingleSelect id="lcSingleSelect_u4b_jfx_vs">
+    <lcQuestion>Select the correct answer:</lcQuestion>
+    <lcAnswerOptionGroup id="lcAnswerOptionGroup_v4b_jfx_vs">
+     <lcAnswerOption>
+      <lcAnswerContent>A: One</lcAnswerContent>
+     </lcAnswerOption>
+     <lcAnswerOption>
+      <lcAnswerContent>B: Two</lcAnswerContent>
+     </lcAnswerOption>
+     <lcAnswerOption>
+      <lcAnswerContent>C: Three</lcAnswerContent>
+      <lcCorrectResponse/>
+     </lcAnswerOption>
+    </lcAnswerOptionGroup>
+   </lcSingleSelect>
+  </lcInteraction>
+ </learningAssessmentbody>
+</learningAssessment>
